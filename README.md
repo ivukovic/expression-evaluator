@@ -114,7 +114,7 @@ Latest application version is running on https://expression-evaluator.fly.dev/sw
 
 [Fly.io Enviroment](/doc/postman/Fly.io.postman_environment.json)
 
-[Postman collection](/doc/postman/)
+[Postman collection](/doc/postman/OpenAPI definition.postman_collection.json)
 
 
 ![image info](doc/images/Swagger.png)

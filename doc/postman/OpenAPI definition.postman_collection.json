@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "8f0fbefd-73d1-4368-b300-910dc133f1a3",
+		"name": "OpenAPI definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "323944",
+		"_collection_link": "https://blue-robot-893803.postman.co/workspace/expression-evaluator~55773deb-1188-462e-abf7-7c1eb11814fe/collection/323944-8f0fbefd-73d1-4368-b300-910dc133f1a3?action=share&source=collection_link&creator=323944"
+	},
+	"item": [
+		{
+			"name": "expression",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Simple logical expression2s\",\n  \"value\": \"(customer.firstName == \\\"JOHN\\\" AND customer.salary < 100) OR (customer.address != null AND customer.address.city == \\\"Washington\\\")\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/expression",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"expression"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "evaluate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer\":\r\n  {\r\n    \"firstName\": \"JOHN\",\r\n    \"lastName\": \"DOE\", \r\n    \"address\":\r\n    {\r\n      \"city\": \"Chicago\",\r\n      \"zipCode\": 1234, \r\n      \"street\": \"56th\", \r\n      \"houseNumber\": 2345\r\n    },\r\n    \"salary\": 99,\r\n    \"type\": \"BUSINESS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/evaluate/:expressionId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"evaluate",
+								":expressionId"
+							],
+							"variable": [
+								{
+									"key": "expressionId",
+									"value": "f6b30d7d-a496-3e70-9fe5-cea4670174b4",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
