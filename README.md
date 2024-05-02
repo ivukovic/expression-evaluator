@@ -5,7 +5,7 @@ Implement logical expression evaluator.
 ## Specification
 Your application should expose two HTTP endpoints:
 
-### API Definition: 
+### API Definition:
 
 ```
 /expression
@@ -32,7 +32,7 @@ Name: Complex logical expression
 Value: (customer.firstName == "JOHN" && customer.salary < 100) OR (customer.address != null && customer.address.city == "Washington")
 ```
 
-### API Definition: 
+### API Definition:
 
 ```
 /evaluate
@@ -75,7 +75,7 @@ When this API is being called requested logical expression should be evaluated u
 You should use following frameworks for your work.
 
 ### Spring JPA
-H2 database running in memory (data will not be persistent across application restarts). 
+H2 database running in memory (data will not be persistent across application restarts).
 
 ### 3rd party libraries
 You are free to add/change any libraries which you might need to solve this exercise, except using any 3rd party expression evaluation library (i.e. SpEL, JSONPath or any other). Also the requirement is that we do not have to setup / install any external software to run this application.
@@ -85,3 +85,40 @@ You are free to add/change any libraries which you might need to solve this exer
 
 ### Commiting
 You will provide your solution by sending us a link to your repo which contains the solution for this exercise.
+
+![image info](doc/images/docker-logo-blue.png)
+#### Building
+```docker build -f src/main/docker/Dockerfile .```
+#### Building container
+```docker build -f src/main/docker/Dockerfile -t expression-evaluator .```
+#### Running container localy
+```docker run -it -p 8080:8080 expression-evaluator```
+
+
+![image info](doc/images/logo-landscape.png)
+#### Launch app
+```fly launch```
+
+App name should be expression-evaluator
+
+#### Deploy
+```flyctl deploy```
+#### Destroy app 
+```fly apps destroy expression-evaluator```
+
+Latest application version is running on https://expression-evaluator.fly.dev/swagger-ui/index.html
+
+![image info](doc/images/postman-logo-orange.png)
+
+[Local Enviroment](/doc/postman/Local.postman_environment.json)
+
+[Fly.io Enviroment](/doc/postman/Fly.io.postman_environment.json)
+
+[Postman collection](/doc/postman/)
+
+
+![image info](doc/images/Swagger.png)
+
+Swagger is available locally on http://localhost:8080/swagger-ui/index.html
+
+Also on cloud instance on Fly.io https://expression-evaluator.fly.dev/swagger-ui/index.html

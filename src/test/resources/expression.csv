@@ -1,0 +1,9 @@
+input,expected
+(customer.firstName == "JOHN" && customer.salary < 100) OR (customer.address != null && customer.address.city == "Washington"),true
+(customer.firstName == "JOHN" && customer.salary < 100),true
+(customer.address != null && customer.address.city == "Washington"),false
+(customer.firstName != "JOHN" && customer.salary < 100) OR (customer.address != null && customer.address.city == "Washington"),false
+(customer.firstName != "JOHN" && customer.salary < 100) OR (customer.address != null && customer.address.city == "Chicago"),true
+(customer.firstName == "JOHN" && customer.salary < 100) AND (customer.address != null && customer.address.city == "Chicago"),true
+(customer.firstName == "JOHN" && customer.salary < 100) AND (customer.address != null && customer.address.city == "Washington"),false
+(customer.firstName == "JOHN" && customer.salary < 100) || (customer.address != null && customer.address.city == "Washington"),true
