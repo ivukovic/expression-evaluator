@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface UUID {
-    String message() default "Must be a valid UUID UUID format defined by RFC 4122 -->  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (32 hexadecimal digits grouped into five sections separated by hyphens)";
+    String message() default "Must be a valid UUID in format defined by RFC 4122 -->  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (32 hexadecimal digits grouped into five sections separated by hyphens)";
 
     Class<?>[] groups() default {};
 

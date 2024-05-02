@@ -26,7 +26,7 @@ public class UUIDValidator implements ConstraintValidator<UUID, String> {
             throw AppException.builder()
                     .time(LocalDateTime.now())
                     .http(BAD_REQUEST)
-                    .errors(List.of(value + " Must be a valid UUID. Example: 123e4567-e89b-42d3-a456-556642440000."))
+                    .errors(List.of(value + "Must be a valid UUID in format defined by RFC 4122 -->  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (32 hexadecimal digits grouped into five sections separated by hyphens)"))
                     .build();
         }
         return ret;
